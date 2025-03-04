@@ -25,7 +25,7 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: lime
-      
+
 plugins:
    - search
    - awesome-nav
@@ -33,14 +33,11 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/james-willett
+      link: https://github.com/georgkruse/cleanqrl
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/willettjames/    
+      link: https://www.linkedin.com/in/rodrigo-coelho140/  
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/willettjames/
-
-
-      link: https://www.linkedin.com/in/willettjames/
+      link: https://www.linkedin.com/in/georg-kruse-71494517a/
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -60,4 +57,4 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 copyright: |
-  &copy; 2025 <a href="https://github.com/james-willett"  target="_blank" rel="noopener">CleanQRL</a>
+  &copy; 2025 <a href="https://github.com/georgkruse/cleanqrl?tab=License-1-ov-file"  target="_blank" rel="noopener">CleanQRL</a>
