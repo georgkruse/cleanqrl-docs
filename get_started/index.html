@@ -255,16 +255,17 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../examples/" class="md-tabs__link">
-        
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../tutorials/overview/" class="md-tabs__link">
+          
   
   Tutorials
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -431,9 +432,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-experiments-via-config-files" class="md-nav__link">
+  <a href="#run-experiments-with-config-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Run experiments via config files
+      Run experiments with config files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-experiments-with-ray-tune" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run experiments with ray tune
     </span>
   </a>
   
@@ -442,7 +452,16 @@
         <li class="md-nav__item">
   <a href="#experiment-logging" class="md-nav__link">
     <span class="md-ellipsis">
-      Experiment Logging
+      Experiment logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-notes-on-custom-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some notes on custom usage
     </span>
   </a>
   
@@ -483,9 +502,24 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Tutorials
@@ -493,7 +527,107 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/knapsack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Knapsack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/tsp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TSP Example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/maze/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maze
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -612,7 +746,7 @@
 </code></pre></div>
 <p>As you can see, the config is devided into 3 parts:</p>
 <ul>
-<li><strong>General parameters</strong>: Here the name of your experiment as well as the logging path is defined. All metrics will be logged in a <code>result.json</code> file in the result folder which will have the time of the experiment execution as a prefix. You can also use <a href="">wandb</a> for enhanced metric logging. </li>
+<li><strong>General parameters</strong>: Here the name of your experiment as well as the logging path is defined. All metrics will be logged in a <code>result.json</code> file in the result folder which will have the time of the experiment execution as a prefix. You can also use <a href="https://wandb.ai/site">wandb</a> for enhanced metric logging. </li>
 <li><strong>Environment parameters</strong>: This is in the simplest case just the string of the gym environment. For jumanji environments as well as for your custom environments, you can also specify additional parameters here (see #Tutorials for details).</li>
 <li><strong>Algorithms parameters</strong>: All algorithms hyperparameters are specified here. For details on the parameters see <a href="">the algorithms section</a></li>
 </ul>
@@ -643,7 +777,7 @@ logs/
 .gitignore
 ...
 </code></pre></div>
-<p>You can also set the <code>wandb</code> variable to True: </p>
+<p>You can also set the <code>wandb</code> variable to <code>True</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@dataclass</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="p">:</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="c1"># General parameters</span>
@@ -654,7 +788,11 @@ logs/
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="c1"># Environment parameters</span>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">env_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;CartPole-v1&quot;</span> <span class="c1"># Environment ID</span>
 </code></pre></div>
-<p>This will create an additional folder for the <a href="">wandb</a> logging:</p>
+<p>You will need to login to your  <a href="https://wandb.ai/site">wandb</a> account before you can run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>wandb<span class="w"> </span>login<span class="w"> </span><span class="c1"># only required for the first time</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>python<span class="w"> </span>cleanrl/reinforce_quantum.py<span class="w"> </span><span class="se">\</span>
+</code></pre></div>
+<p>This will create an additional folder for the <a href="https://wandb.ai/site">wandb</a> logging and you can inspect your experiment data also online:</p>
 <div class="highlight"><pre><span></span><code>...
 configs
 examples
@@ -666,15 +804,14 @@ logs/
 .gitignore
 ...
 </code></pre></div>
-<h2 id="run-experiments-via-config-files">Run experiments via config files</h2>
+<h2 id="run-experiments-with-config-files">Run experiments with config files</h2>
 <p>Additionally, all algorithms can be executed using the <code>main functions</code> in the root directory. All parameters for the algorithms are specified in the <code>configs</code> folder. <a href="">See additional information in the documentation.</a></p>
-<h2 id="experiment-logging">Experiment Logging</h2>
+<h2 id="run-experiments-with-ray-tune">Run experiments with ray tune</h2>
+<p>Additionally, all algorithms can be executed using the <code>main functions</code> in the root directory. All parameters for the algorithms are specified in the <code>configs</code> folder. <a href="">See additional information in the documentation.</a></p>
+<h2 id="experiment-logging">Experiment logging</h2>
 <p>By default, all metrics are logged to a json file. </p>
 <p>For tensorboard logging, you can use  ray tune (see more in the following section and the <a href="">docs</a>)</p>
-<p>To use experiment tracking with <a href="">wandb</a>, you need to set the boolean variable <code>wandb</code> in the config class or the config file to True and then run: </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>wandb<span class="w"> </span>login<span class="w"> </span><span class="c1"># only required for the first time</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>python<span class="w"> </span>cleanrl/ppo_quantum.py<span class="w"> </span><span class="se">\</span>
-</code></pre></div>
+<h2 id="some-notes-on-custom-usage">Some notes on custom usage</h2>
 
 
 
