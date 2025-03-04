@@ -1,8 +1,6 @@
 # Welcome to CleanQRL
 
 
-
-
 [<img src="https://img.shields.io/badge/license-MIT-blue">](https://github.com/georgkruse/cleanqrl?tab=License-1-ov-file)
 [![docs](https://img.shields.io/github/deployments/vwxyzjn/cleanrl/Production?label=docs&logo=vercel)](https://georgkruse.github.io/cleanqrl-docs/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
