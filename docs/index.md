@@ -26,5 +26,4 @@ What we are missing compared to **[CleanRL](https://github.com/vwxyzjn/cleanrl)*
 * 📹 Videos of Gameplay Capturing
 
 
-You can read more about CleanRL in [our upcoming paper]() and [see the github wiki for additional documentation](https://georgkruse.github.io/cleanqrl-docs/).
-
+You can read more about CleanRL in [our upcoming paper]().
