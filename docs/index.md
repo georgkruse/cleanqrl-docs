@@ -7,15 +7,15 @@
 [![docs](https://img.shields.io/github/deployments/vwxyzjn/cleanrl/Production?label=docs&logo=vercel)](https://georgkruse.github.io/cleanqrl-docs/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+[![Open In Colab]()]()
 
 
-**CleanQRL** is a Reinforcement Learning library specifically tailored to the subbranch of Quantum Reinforcement Learning and is greatly inspired by the amazing work of **[CleanRL](https://github.com/vwxyzjn/cleanrl)**. Just as the classical analougue, we aim to provide high-quality single-file implementation with research-friendly features. The implementation follows mainly the ideas of **[CleanRL](https://github.com/vwxyzjn/cleanrl)** and is clean and simple, yet can scale nicely trough additional features such as **[ray tune](https://docs.ray.io/en/latest/tune/index.html)**. The main features of this repository are
+**CleanQRL** is a Reinforcement Learning library specifically tailored to the subbranch of Quantum Reinforcement Learning and is greatly inspired by the amazing work of **[CleanRL](https://github.com/vwxyzjn/cleanrl)**. Just as the classical analogue, we aim to provide high-quality single-file implementation with research-friendly features. The implementation follows mainly the ideas of **[CleanRL](https://github.com/vwxyzjn/cleanrl)** and is clean and simple, yet can scale nicely trough additional features such as **[ray tune](https://docs.ray.io/en/latest/tune/index.html)**. The main features of this repository are
 
 
 * 📜 Single-file implementations of classical and quantum version of 5+ Reinforcement Learning agents 
 * 💾 Tuned and Benchmarked agents (with available configs)
-* 🎮 Integration of gymnasium, mujoco and jumanji
+* 🎮 Integration of [gymnasium](https://gymnasium.farama.org/), [mujoco](https://www.gymlibrary.dev/environments/mujoco/index.html) and [jumanji](https://github.com/instadeepai/jumanji)
 * 📘 Examples on how to enhance the standard QRL agents on a variety of games
 * 📈 Tensorboard Logging
 * 🌱 Local Reproducibility via Seeding
@@ -28,15 +28,15 @@ What we are missing compared to **[CleanRL](https://github.com/vwxyzjn/cleanrl)*
 * 📹 Videos of Gameplay Capturing
 
 
-You can read more about CleanRL in [our upcoming paper]().
+You can read more about **CleanQRL** in [our upcoming paper]().
 
 ## Contact and Community
 
-We want to grow as a community, so posting [Github Issues](https://github.com/vwxyzjn/cleanrl/issues) and PRs are very welcome! If you are missing and algorithms or have a specific problem to which you want to tailor your QRL algorithms but fail to do so, you can also create a feature request!
+We want to grow as a community, so posting [Github Issues](https://github.com/georgkruse/cleanqrl/issues) and PRs are very welcome! If you are missing and algorithms or have a specific problem to which you want to tailor your QRL algorithms but fail to do so, you can also create a feature request!
 
 ## Citing CleanQRL
 
-If you use CleanQRL in your work, please cite our [paper]:
+If you use **CleanQRL** in your work, please cite our [paper]:
 
 
 ## Citing CleanRL
