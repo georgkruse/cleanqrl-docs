@@ -1,4 +1,6 @@
-# Welcome to CleanQRL
+# Home
+
+## Welcome to CleanQRL
 
 
 [<img src="https://img.shields.io/badge/license-MIT-blue">](https://github.com/georgkruse/cleanqrl?tab=License-1-ov-file)
@@ -27,3 +29,29 @@ What we are missing compared to **[CleanRL](https://github.com/vwxyzjn/cleanrl)*
 
 
 You can read more about CleanRL in [our upcoming paper]().
+
+## Contact and Community
+
+We want to grow as a community, so posting [Github Issues](https://github.com/vwxyzjn/cleanrl/issues) and PRs are very welcome! If you are missing and algorithms or have a specific problem to which you want to tailor your QRL algorithms but fail to do so, you can also create a feature request!
+
+## Citing CleanQRL
+
+If you use CleanQRL in your work, please cite our [paper]:
+
+
+## Citing CleanRL
+
+If you used mainly the classical parts of our code in your work, please cite the original [CleanRL paper](https://www.jmlr.org/papers/v23/21-1342.html):
+
+```bibtex
+@article{huang2022cleanrl,
+  author  = {Shengyi Huang and Rousslan Fernand Julien Dossa and Chang Ye and Jeff Braga and Dipam Chakraborty and Kinal Mehta and João G.M. Araújo},
+  title   = {CleanRL: High-quality Single-file Implementations of Deep Reinforcement Learning Algorithms},
+  journal = {Journal of Machine Learning Research},
+  year    = {2022},
+  volume  = {23},
+  number  = {274},
+  pages   = {1--18},
+  url     = {http://jmlr.org/papers/v23/21-1342.html}
+}
+```

@@ -2,6 +2,17 @@ nav:
     - index.md
     - get_started.md
     - algorithms.md
-    - examples.md
-    - hyperparameter_tuning.md
-    - benchmarks.md
+    - Tutorials:
+        - tutorials/overview.md
+        - tutorials/maze.md
+        - tutorials/tsp.md
+        - tutorials/knapsack.md
+    - Benchmarks:
+        - benchmarks/overview.md
+        - benchmarks/ddpg_benchmarks.md
+        - benchmarks/dqn_benchmarks.md
+        - benchmarks/ppo_benchmarks.md
+        - benchmarks/reinforce_benchmarks.md
+    - Advanced Usage:
+        - advanced_usage/hyperparameter_tuning.md
+        - advanced_usage/jumanji_environments.md
