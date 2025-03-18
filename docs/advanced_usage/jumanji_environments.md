@@ -6,7 +6,20 @@ The Jumanji environments are integrated via the ```create_jumanji_env``` functio
 The function applies standard wrappers like ```JumanjiToGymWrapper```, ```FlattenObservation```, and ```RecordEpisodeStatistics``` before adding custom wrappers, ensuring compatibility with Gymnasium’s API. Note that the ```FlattenObservation``` gym wrapper converts the observation from a dictionary to a numpy array.
 
 
-# Jumanji wrappers
+```py title="jumanji_wrapper.py"
+    env = jumanji.wrappers.JumanjiToGymWrapper(env)
+    env = gym.wrappers.FlattenObservation(env)
+    env = gym.wrappers.RecordEpisodeStatistics(env)
+
+    if env_id == "TSP-v1":
+        env = JumanjiWrapperTSP(env)
+    elif env_id == "Knapsack-v1":
+        env = JumanjiWrapperKnapsack(env)
+    elif env_id == "Maze-v0":
+        env = JumanjiWrapperMaze(env, config)
+```
+
+# Jumanji Wrappers
 
 In this repository, there are three custom wrappers ```JumanjiWrapperTSP```, ```JumanjiWrapperKnapsack```, and ```JumanjiWrapperMaze```. For additional Jumanji environments, you will need to write your own wrapper.
 
