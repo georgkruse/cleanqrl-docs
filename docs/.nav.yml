@@ -12,12 +12,14 @@ nav:
         - tutorials/maze.md
         - tutorials/tsp.md
         - tutorials/knapsack.md
+        - tutorials/noise_models.md
     - Benchmarks:
         - benchmarks/overview.md
-        - benchmarks/ddpg_benchmarks.md
         - benchmarks/dqn_benchmarks.md
-        - benchmarks/ppo_benchmarks.md
         - benchmarks/reinforce_benchmarks.md
+        - benchmarks/ppo_benchmarks.md
+        - benchmarks/ddpg_benchmarks.md
+
     - Advanced Usage:
         - advanced_usage/hyperparameter_tuning.md
         - advanced_usage/jumanji_environments.md

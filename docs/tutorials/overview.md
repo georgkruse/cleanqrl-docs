@@ -11,4 +11,6 @@ In this section we provide a list of tutorials. We show you how to easily and qu
 * **[Hamiltonian encodings for the Knapsack Problem (KP)](https://georgkruse.github.io/cleanqrl-docs/tutorials/knapsack/)**
 
     In this tutorial, we will show how to use the results from the paper [Hamiltonian-based Quantum Reinforcement Learning for Neural Combinatorial Optimization](https://arxiv.org/abs/2405.07790)
-    
+
+* **[Noise Models: How your algorithm would perform on real quantum hardware](https://georgkruse.github.io/cleanqrl-docs/tutorials/noise_models/)**
+
