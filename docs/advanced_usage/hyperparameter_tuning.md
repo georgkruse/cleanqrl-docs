@@ -2,7 +2,7 @@
 
 ## Ray Tune 
 
-Generally, in (Q)RL, hyperparameter tuning is essential. Therefore, we offer easy hyperparamter tunings with [ray tune](). To use it, you can take a look at the config files located in the ```configs/tune``` folder and the ```tune.py```.
+Generally, in (Q)RL, hyperparameter tuning is essential. Therefore, we offer easy hyperparameter tunings with [ray tune](). To use it, you can take a look at the config files located in the ```configs/tune``` folder and the ```tune.py```.
 
 ```py title="tune.py"
     # Generate the parameter space for the experiment from the config file
@@ -50,7 +50,7 @@ We use the **tune.Tuner** to perform the hyperparameter search. But before we ta
 ray_local_mode:         False
 num_cpus:               24
 num_gpus:               0
-num_samples:  3
+num_samples:            3
 cpus_per_worker:        1
 gpus_per_worker:        0
 ```
