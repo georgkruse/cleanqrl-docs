@@ -1,7 +1,12 @@
 nav:
     - index.md
     - get_started.md
-    - algorithms.md
+    - Algorithms:
+        - algorithms/overview.md
+        - algorithms/dqn.md
+        - algorithms/reinforce.md
+        - algorithms/ppo.md
+        - algorithms/ddpg.md
     - Tutorials:
         - tutorials/overview.md
         - tutorials/maze.md

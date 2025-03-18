@@ -10,7 +10,9 @@ cd cleanqrl
 conda env create -f environment.yaml
 ```
 
+
 That's it, now you're set up!
+
 
 ## Run first experiments
 
