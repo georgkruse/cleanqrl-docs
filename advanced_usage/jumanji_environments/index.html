@@ -668,6 +668,28 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/noise_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Noise models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -745,11 +767,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../benchmarks/ddpg_benchmarks/" class="md-nav__link">
+      <a href="../../benchmarks/dqn_benchmarks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    DDPG
+    DQN
     
   </span>
   
@@ -767,11 +789,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../benchmarks/dqn_benchmarks/" class="md-nav__link">
+      <a href="../../benchmarks/reinforce_benchmarks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    DQN
+    REINFORCE
     
   </span>
   
@@ -811,11 +833,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../benchmarks/reinforce_benchmarks/" class="md-nav__link">
+      <a href="../../benchmarks/ddpg_benchmarks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    REINFORCE
+    DDPG
     
   </span>
   
@@ -959,10 +981,21 @@
 <h1 id="jumanji-environments">Jumanji Environments</h1>
 <p>The Jumanji environments are integrated via the <code>create_jumanji_env</code> function, which initializes specific environments like TSP, Knapsack, and Maze from the jumanji.environments module. This function takes an <code>env_id</code> (e.g., "TSP-v1", "Knapsack-v1", "Maze-v0") and a config dictionary to customize parameters such as <code>num_cities</code>, <code>num_items</code>, or maze dimensions (<code>num_rows</code>, <code>num_cols</code>). It uses generators (e.g., <code>UniformGenerator</code> for TSP, <code>RandomGeneratorKnapsack</code> for Knapsack) to define problem instances. For unsupported <code>env_ids</code>, it falls back to jumanji.make with a warning about potential missing custom wrappers. </p>
 <p>The function applies standard wrappers like <code>JumanjiToGymWrapper</code>, <code>FlattenObservation</code>, and <code>RecordEpisodeStatistics</code> before adding custom wrappers, ensuring compatibility with Gymnasium’s API. Note that the <code>FlattenObservation</code> gym wrapper converts the observation from a dictionary to a numpy array.</p>
-<h1 id="jumanji-wrappers">Jumanji wrappers</h1>
+<div class="highlight"><span class="filename">jumanji_wrapper.py</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="n">env</span> <span class="o">=</span> <span class="n">jumanji</span><span class="o">.</span><span class="n">wrappers</span><span class="o">.</span><span class="n">JumanjiToGymWrapper</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">wrappers</span><span class="o">.</span><span class="n">FlattenObservation</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">wrappers</span><span class="o">.</span><span class="n">RecordEpisodeStatistics</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">if</span> <span class="n">env_id</span> <span class="o">==</span> <span class="s2">&quot;TSP-v1&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">env</span> <span class="o">=</span> <span class="n">JumanjiWrapperTSP</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">elif</span> <span class="n">env_id</span> <span class="o">==</span> <span class="s2">&quot;Knapsack-v1&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">env</span> <span class="o">=</span> <span class="n">JumanjiWrapperKnapsack</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">elif</span> <span class="n">env_id</span> <span class="o">==</span> <span class="s2">&quot;Maze-v0&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">env</span> <span class="o">=</span> <span class="n">JumanjiWrapperMaze</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="jumanji-wrappers">Jumanji Wrappers</h1>
 <p>In this repository, there are three custom wrappers <code>JumanjiWrapperTSP</code>, <code>JumanjiWrapperKnapsack</code>, and <code>JumanjiWrapperMaze</code>. For additional Jumanji environments, you will need to write your own wrapper.</p>
 <ul>
-<li><code>JumanjiWrapperTSP</code>: Wraps the TSP environment, overriding <code>step</code> to track episode counts and compute additional metrics every 100 episodes when truncated. It extracts node coordinates from the state and calculates the optimal tour length using <code>tsp_compute_optimal_tour</code>, which exhaustively tests permutations via itertools.permutations. The <code>tsp_compute_tour_length</code> helper computes Euclidean distances between nodes, including the return to the start. The wrapper adds <code>optimal_tour_length</code> and <code>approximation_ratio</code> to the info dict and is penalizing incomplete tours. Note that the calculation of the <code>optimal_tour_lenght</code> is done in brute force, which will be very expensive for large problem sizes.</li>
+<li><code>JumanjiWrapperTSP</code>: Wraps the TSP environment, overriding <code>step</code> to track episode counts and compute additional metrics every 100 episodes when truncated. It extracts node coordinates from the state and calculates the optimal tour length using <code>tsp_compute_optimal_tour</code>, which exhaustively tests permutations via itertools.permutations. The <code>tsp_compute_tour_length</code> helper computes Euclidean distances between nodes, including the return to the start. The wrapper adds <code>optimal_tour_length</code> and <code>approximation_ratio</code> to the info dict and is penalizing incomplete tours. Note that the calculation of the <code>optimal_tour_length</code> is done in brute force, which will be very expensive for large problem sizes.</li>
 <li><code>JumanjiWrapperKnapsack</code>: Wraps the Knapsack environment, enhancing step to compute optimal values every 100 episodes upon truncation. It uses <code>knapsack_optimal_value</code>, a dynamic programming solution that discretizes weights and values (scaled by precision=1000) to solve the <code>0-1 knapsack problem</code> efficiently. The wrapper stores the previous state and adds <code>optimal_value</code> and <code>approximation_ratio</code> to info, enabling performance evaluation.</li>
 <li><code>JumanjiWrapperMaze</code>: Wraps the Maze environment, adding a configurable <code>reset</code> method that supports a constant maze layout via a fixed seed if <code>constant_maze</code> is <code>True</code> in the config. The <code>step</code> method simplifies <code>termination</code> handling, always returning <code>terminate=False</code> and clearing info unless truncated. This wrapper is minimal but allows for consistent maze testing.</li>
 </ul>
