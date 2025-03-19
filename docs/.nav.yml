@@ -7,6 +7,7 @@ nav:
         - algorithms/reinforce.md
         - algorithms/ppo.md
         - algorithms/ddpg.md
+    - environments.md
     - Tutorials:
         - tutorials/overview.md
         - tutorials/maze.md
@@ -19,7 +20,6 @@ nav:
         - benchmarks/reinforce_benchmarks.md
         - benchmarks/ppo_benchmarks.md
         - benchmarks/ddpg_benchmarks.md
-
     - Advanced Usage:
         - advanced_usage/hyperparameter_tuning.md
         - advanced_usage/jumanji_environments.md
